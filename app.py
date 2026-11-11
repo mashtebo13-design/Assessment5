@@ -12,7 +12,6 @@ if uploaded_file is not None:
   st.write(int(df[selected_column].isna().total()))
   st.metric("Unique values", df[selected_column].nunique())
   numeric_columns = df.select_dtypes(include="number").columns.tolist()
-  
    if len(numeric_columns) > 0:
      numeric_column = st.selectbox("Numeric column", choices=numeric_columns)
      st.line_chart(df[numeric_column])
